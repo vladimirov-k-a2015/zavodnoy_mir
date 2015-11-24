@@ -1,0 +1,19 @@
+<h1>Edit</h1>
+
+<%= form_for @word do |f| %>
+    Русский -         <%= f.text_field :russian %>
+	Древнегреческий - <%= f.text_field :greek %>
+	Латынь -          <%= f.text_field :latin %>
+	Английский -      <%= f.text_field :english %></br>
+	Французский -     <%= f.text_field :french %> 
+	Немецкий -        <%= f.text_field :german %>
+	Голландский -     <%= f.text_field :dutch %>
+	Испанский -       <%= f.text_field :spanish %></br>
+	Итальянский -     <%= f.text_field :italian %>	
+	Венгерский -      <%= f.text_field :hungarian %>
+	Хорватский -      <%= f.text_field :croatian %>
+
+	<p><%= f.submit "Создать" %> </p>
+<% end %>
+
+    

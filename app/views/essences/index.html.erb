@@ -1,0 +1,44 @@
+<h1>Сущности</h1>
+<p>«Не следует множить сущее без необходимости», Оккам, 1285—1349</p>
+
+<p><%=  link_to "Create new", new_essence_path %></p>
+
+<% if @essences.empty? %>
+   <b>Список пуст</b>
+<% else %>
+<table>
+	<tr>
+		<th>id</th>
+		<th>name</th>
+		<th>description</th>
+		<th>image_url</th>
+		<th>links</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    <% @essences.each do  |essence| %>
+
+    <tr>
+		<td><%= essence.id %></td>
+		<td><%= essence.name %></td>
+		<td><%= essence.description %></td>
+		<td><%= essence.image_url %></td>
+		<td><%= essence.links %></td>
+		<td><%= link_to "Destroy", essence, method: :delete, data: { confirm: "Точно удалить?"} %></td>
+		<td><%= link_to 'Edit', edit_essence_path(essence) %></td>
+		<td><%= link_to 'Edit2',  "/essences/#{essence.id}/edit" %></td> 
+		<td><%= link_to 'Show', essence_path(essence) %></td>
+		
+        
+
+
+	</tr>
+	<% end %>
+
+</table>
+
+	<% end %>

@@ -1,0 +1,24 @@
+<h1>Create new</h1>
+
+<%= form_for @book do |book| %>
+    Название -     <%= book.text_field :name %>
+	Цена -         <%= book.text_field :price %>
+	Автор -        <%= book.text_field :author%>
+	Год издания -  <%= book.text_field :year %></br>
+	Страна -       <%= book.text_field :country %> 
+	Издательство - <%= book.text_field :publishing_house %>
+	Иллюсрации -   <%= book.text_field :illustrator %>
+	Описание -     <%= book.text_field :description %></br>
+	Жанр -         <%= book.text_field :genre %>	
+	Размеры -      <%= book.text_field :size %>
+	Обложка -      <%= book.text_field :cover %>
+	Состояние -    <%= book.text_field :condition %>
+	Наличие -      <%= book.text_field :on_hand %>
+	Продается -    <%= book.text_field :for_sale %>
+	Рисунок -      <%= book.text_field :image_url %>
+	Примечания -   <%= book.text_field :note %>
+
+	<p><%= book.submit "Создать" %> </p>
+<% end %>
+
+    

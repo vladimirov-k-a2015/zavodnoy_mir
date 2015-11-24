@@ -1,0 +1,21 @@
+<h1>Слова</h1>
+
+<h2><%= @word.russian %><h2/>
+
+<ul>
+	<li>Русский - <%= @word.russian %></li>
+	<li>Древнегреческий - <%= @word.greek %></li>
+	<li>Латынь - <%= @word.latin %></li>
+	<li>Английский - <%= @word.english %></li>
+	<li>Французский - <%= @word.french %></li>
+	<li>Немецкий - <%= @word.german %></li>
+	<li>Голландский - <%= @word.dutch %></li>
+	<li>Испанский - <%= @word.spanish %></li>
+	<li>Итальянский - <%= @word.italian %></li>
+	<li>Французский - <%= @word.french %></li>
+	<li>Венгерский - <%= @word.hungarian %></li>
+	<li>Хорватский - <%= @word.croatian %></li>
+
+</ul>
+
+<p><%=  link_to "Back to Words List", words_path %></p>

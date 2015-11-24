@@ -1,0 +1,12 @@
+<h1>Слова</h1>
+
+<h2><%= @essence.russian %><h2/>
+
+<ul>
+	<li>Имя -      <%= essence.name %></li>
+	<li>Описание - <%= essence.description %></li>
+	<li>Картинка - <%= essence.image_url %></li>
+	<li>Ссылки -   <%= essence.links %></li>
+</ul>
+
+<p><%=  link_to "Back to List", essences_path %></p>

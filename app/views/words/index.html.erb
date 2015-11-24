@@ -1,0 +1,61 @@
+<h1>Слова</h1>
+<h3>..поговорим о двуж мирах - о мире вербальном и мире реальном - о реальности реальности и реальности текста...</h3>
+<p>Название никогда не раскрывает сущности предмета, никогда не покрывает смысла..</br>
+	Имена условны… Они не воссоздают предметного мира… <b>Они создают свой мир…</b> это мир имен… <b>мир слов…</b> Их придумали, чтобы обмениваться словами, а не предметами… </p>
+<p><%=  link_to "Create new", new_word_path %></p>
+
+<% if @words.empty? %>
+   <b>Словарь пуст</b>
+<% else %>
+<table>
+	<tr>
+		<th>id________</th>
+		<th>russian___</th>
+		<th>greek_____</th>
+		<th>latin_____</th>
+		<th>english___</th>
+		<th>franch____</th>
+		<th>german____</th>
+		<th>dutch_____</th>
+		<th>spanish___</th>
+		<th>italian___</th>
+		<th>hungarian_</th>
+		<th>croatian__</th>
+		<th>chance____</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    <% @words.each do  |word| %>
+
+    <tr>
+		<td><%= word.id %></td>
+		<td><%= word.russian %></td>
+		<td><%= word.greek %></td>
+		<td><%= word.latin %></td>
+		<td><%= word.english %></td>
+		<td><%= word.french %></td>
+		<td><%= word.german %></td>
+		<td><%= word.dutch %></td>
+		<td><%= word.spanish %></td>
+		<td><%= word.italian %></td>
+		<td><%= word.hungarian %></td>
+		<td><%= word.croatian %></td>
+		<td><%= word.chance %></td>
+		<td><%= link_to "Destroy", word, method: :delete, data: { confirm: "Точно удалить?"} %></td>
+		<td><%= link_to 'Edit', edit_word_path(word) %></td>
+		<td><%= link_to 'Edit2',  "/words/#{word.id}/edit" %></td> 
+		<td><%= link_to 'Show', word_path(word) %></td>
+		
+        
+
+
+	</tr>
+	<% end %>
+
+</table>
+
+	<% end %>

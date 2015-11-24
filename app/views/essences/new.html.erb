@@ -1,0 +1,12 @@
+<h1>Create new</h1>
+
+<%= form_for @essence do |essence| %>
+    Имя -         <%= essence.text_field :name %>
+	Описание - <%= essence.text_field :description %>
+	Рисунок -          <%= essence.text_field :image_url %>
+	Ссылки -      <%= essence.text_field :links %></br>
+	
+	<p><%= essence.submit "Создать" %> </p>
+<% end %>
+
+    

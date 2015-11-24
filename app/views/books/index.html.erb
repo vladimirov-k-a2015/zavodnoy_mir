@@ -1,0 +1,68 @@
+<h1>Книги</h1>
+
+<p><%=  link_to "Create new", new_book_path %></p>
+
+<% if @books.empty? %>
+   <b>Список пуст</b>
+<% else %>
+<table>
+	<tr>
+		<th>id</th>
+		<th>name</th>
+		<th>price</th>
+		<th>author</th>
+		<th>year</th>
+		<th>country</th>
+		<th>publishing_house</th>
+		<th>illustrator</th>
+		<th>description</th>
+		<th>genre</th>
+		<th>size</th>
+		<th>weight</th>
+		<th>cover</th>
+		<th>condition</th>
+		<th>on_hand</th>
+		<th>for_sale</th>
+		<th>image_url</th>
+		<th>note</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    <% @books.each do  |book| %>
+
+    <tr>
+		<td><%= book.id %></td>
+		<td><%= book.name %></td>
+		<td><%= book.price %></td>
+		<td><%= book.author %></td>
+		<td><%= book.year %></td>
+		<td><%= book.country %></td>
+		<td><%= book.publishing_house %></td>
+		<td><%= book.illustrator %></td>
+		<td><%= book.description %></td>
+		<td><%= book.genre %></td>
+		<td><%= book.size %></td>
+		<td><%= book.weight %></td>
+		<td><%= book.cover %></td>
+		<td><%= book.condition %></td>
+		<td><%= book.on_hand %></td>
+		<td><%= book.for_sale %></td>
+		<td><%= book.image_url %></td>
+		<td><%= book.note %></td>
+		<td><%= link_to "Destroy", book, method: :delete, data: { confirm: "Точно удалить?"} %></td>
+		<td><%= link_to 'Edit', edit_book_path(book) %></td>
+		<td><%= link_to 'Edit2',  "/books/#{book.id}/edit" %></td> 
+		<td><%= link_to 'Show', book_path(book) %></td>
+		
+        
+
+
+	</tr>
+	<% end %>
+
+</table>
+
+	<% end %>

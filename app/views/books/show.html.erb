@@ -1,0 +1,26 @@
+<h1>Книги</h1>
+
+<p><h2><%= @book.name %><h2/></p>
+
+<ul>
+	<li>Название -     <%= @book.name %></li>
+	<li>Цена -         <%= @book.price %></li>
+	<li>Автор -        <%= @book.author%></li>
+	<li>Год издания -  <%= @book.year %></li>
+	<li>Страна -       <%= @book.country %> </li>
+	<li>Издательство - <%= @book.publishing_house %></li>
+	<li>Иллюстрации -  <%= @book.illustrator %></li>
+	<li>Описание -     <%= @book.description %></li>
+	<li>Жанр -         <%= @book.genre %>	</li>
+	<li>Размеры -      <%= @book.size %></li>
+	<li>Вес -          <%= @book.weight %></li>
+	<li>Обложка -      <%= @book.cover %></li>
+	<li>Состояние -    <%= @book.condition %></li>
+	<li>Наличие -      <%= @book.on_hand %></li>
+	<li>Продается -    <%= @book.for_sale %></li>
+	<li>Рисунок -      <%= @book.image_url %></li>
+	<li>Примечания -   <%= @book.note %></li>
+
+</ul>
+
+<p><%=  link_to "Back to Books List", books_path %></p>
