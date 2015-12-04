@@ -7,8 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Заводной мир", '#', id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Лунариум",    '#' %></li>
+              <li><%= link_to "Студия снов", '#' %></li>
+              <li><%= link_to "Слёзы вещей", '#' %></li>
+              <li><%= link_to "Лавка древностей", '#' %></li>
+              <li><%= link_to "Сущности Мифов", '#' %></li>
+              <li><%= link_to "Слова", '#' %></li>
+              <li><%= link_to "Библиотека", '#' %></li>
+              <li><%= link_to "Уроборос", '#' %></li>
+              <li><%= link_to "Средневековье", '#' %></li>
+              <li><%= link_to "Ослепительный мрак Античности", '#' %></li>
+              <li><%= link_to "Адмирал", '#' %></li>
+              <li><%= link_to "Королевство кривых", '#' %></li>
+              <li><%= link_to "Текст", '#' %></li>
+              <li><%= link_to "Тишина", '#' %></li>
+              <li><%= link_to "Поэзия", '#' %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
 </body>
 </html>
