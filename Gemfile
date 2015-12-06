@@ -6,6 +6,7 @@ ruby '2.0.0'
 gem 'rails', '4.2.3'
 
 gem 'bootstrap-sass', '2.3.2.0'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -36,6 +37,10 @@ gem 'rails_12factor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
