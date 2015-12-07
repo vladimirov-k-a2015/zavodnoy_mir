@@ -1,0 +1,10 @@
+<h1>Create new</h1>
+
+<%= form_for @event do |event| %>
+    Дата -         <%= event.text_field :year %>
+	Описание -     <%= event.text_field :description %></br>
+
+	<p><%= event.submit "Создать" %> </p>
+<% end %>
+
+    

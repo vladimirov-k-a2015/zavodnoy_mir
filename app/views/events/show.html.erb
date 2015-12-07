@@ -1,0 +1,11 @@
+<h1>Events</h1>
+
+<p><h2><%= @event.year %><h2/></p>
+
+<ul>
+	<li>Дата -         <%= @event.year %></li>
+	<li>Описание -     <%= @event.description %></li>
+
+</ul>
+
+<p><%=  link_to "Back to events List", events_path %></p>

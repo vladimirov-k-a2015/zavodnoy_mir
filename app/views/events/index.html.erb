@@ -1,0 +1,35 @@
+<h1>Книги</h1>
+
+<p><%=  link_to "Create new", new_event_path %></p>
+
+<% if @events.empty? %>
+   <b>Список пуст</b>
+<% else %>
+<table>
+	<tr>
+		<th>id</th>
+		<th>year</th>
+		<th>description</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    <% @events.each do  |event| %>
+
+    <tr>
+		<td><%= event.id %></td>
+		<td><%= event.year %></td>
+		<td><%= event.description %></td>
+		<td><%= link_to "Destroy", event, method: :delete, data: { confirm: "Точно удалить?"} %></td>
+		<td><%= link_to 'Edit', edit_event_path(event) %></td>
+		<td><%= link_to 'Edit2',  "/events/#{event.id}/edit" %></td> 
+		<td><%= link_to 'Show', event_path(event) %></td>      
+
+	</tr>
+	<% end %>
+
+</table>
+
+	<% end %>
