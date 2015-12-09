@@ -1,0 +1,32 @@
+<h1>texts</h1>
+
+<p><%=  link_to "Create new", new_text_path %></p>
+
+<% if @texts.empty? %>
+   <b>Список пуст</b>
+<% else %>
+<table>
+	<tr>
+		<th>id</th>
+		<th>post</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    <% @texts.each do  |text| %>
+
+    <tr>
+		<td><%= text.post %></td>
+		<td><%= link_to "Destroy", text, method: :delete, data: { confirm: "Точно удалить?"} %></td>
+		<td><%= link_to 'Edit', edit_text_path(text) %></td>
+		<td><%= link_to 'Edit2',  "/texts/#{text.id}/edit" %></td> 
+		<td><%= link_to 'Show', text_path(text) %></td>      
+
+	</tr>
+	<% end %>
+
+</table>
+
+	<% end %>
