@@ -1,0 +1,13 @@
+<h1>Edit</h1>
+
+<%= form_for @author do |author| %>
+    Имя -          <%= author.text_field :name %>
+	Страна -       <%= author.text_field :country %>
+	Годы -         <%= author.text_field :years %></br>
+	Примечания -   <%= author.text_field :note %> 
+
+    	
+	<p><%= author.submit "Создать" %> </p>
+<% end %>
+
+    

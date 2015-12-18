@@ -1,0 +1,42 @@
+<h1>Авторы</h1>
+
+<p><%=  link_to "Create new", new_author_path %></p>
+
+<% if @authors.empty? %>
+   <b>Список пуст</b>
+<% else %>
+<table>
+	<tr>
+		<th>id</th>
+		<th>name</th>
+		<th>country</th>
+		<th>year</th>
+		<th>note</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+    
+    <% @authors.each do  |author| %>
+
+    <tr>
+		<td><%= author.id %></td>
+		<td><%= author.name %></td>
+		<td><%= author.country %></td>
+		<td><%= author.years %></td>
+		<td><%= author.note %></td>
+		<td><%= link_to "Destroy", author, method: :delete, data: { confirm: "Точно удалить?"} %></td>
+		<td><%= link_to 'Edit', edit_author_path(author) %></td>
+		<td><%= link_to 'Edit2',  "/authors/#{author.id}/edit" %></td> 
+		<td><%= link_to 'Show', author_path(author) %></td>
+		
+        
+
+
+	</tr>
+	<% end %>
+
+</table>
+
+	<% end %>

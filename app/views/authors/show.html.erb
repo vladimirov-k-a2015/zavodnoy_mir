@@ -1,0 +1,13 @@
+<h1>Авторы</h1>
+
+<p><h2><%= @author.name %><h2/></p>
+
+<ul>
+	<li>Имя -     <%= @author.name %></li>
+	<li>Годы -  <%= @author.years %></li>
+	<li>Страна -       <%= @author.country %> </li>
+	<li>Примечания -   <%= @author.note %></li>
+
+</ul>
+
+<p><%=  link_to "Back to authors List", authors_path %></p>
