@@ -5,36 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-	<header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "Заводной мир", '/', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Лунариум",    '#' %></li>
-              <li><%= link_to "Студия снов", '#' %></li>
-              <li><%= link_to "Слёзы вещей", "static_pages/mononoaware" %></li>
-              <li><%= link_to "Лавка древностей", '#' %></li>
-              <li><%= link_to "Сущности Мифов", essences_path %></li>
-              <li><%= link_to "Королевство кривых", events_path %></li>
-              <li><%= link_to "Слова", words_path %></li>
-              <li><%= link_to "Компрачикосы сознания", '#' %></li>
-              <li><%= link_to "Уроборос", '#' %></li>
-              <li><%= link_to "Средневековье", '#' %></li>
-              <li><%= link_to "Античность", '#' %></li>
-              <li><%= link_to "Библиотека", books_path %></li>
-              <li><%= link_to "Текст", texts_path %></li>
-              <li><%= link_to "Авторы", authors_path %></li>
-              <li><%= link_to "Тишина", '#' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+
+   <%= render 'layouts/header' %>
+	
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
 </body>
 </html>
