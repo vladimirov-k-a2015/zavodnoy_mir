@@ -1,6 +1,11 @@
 <h1>Авторы</h1>
 
-<p><%=  link_to "Create new", new_author_path %></p>
+<span class = "createAction">Create new</span>
+
+<%=  link_to "Добавить нового автора", new_author_path %> 
+
+<div id="author-form" style="display:none;">
+</div>
 
 <% if @authors.empty? %>
    <b>Список пуст</b>

@@ -1,0 +1,9 @@
+# _form.html.erb
+
+<%= form_for @author, remote: true do |f|   %>
+  <%= author.text_field  :name          %>
+  <%= author.text_field  :country       %>
+  <%= author.text_field  :year          %>
+  <%= author.text_field  :note          %>
+  <%= f.button :submit                  %>
+<% end %>

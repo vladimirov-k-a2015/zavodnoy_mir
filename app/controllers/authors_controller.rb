@@ -4,6 +4,7 @@ class AuthorsController < ApplicationController
 	# before_filter :check_if_admin, only: [:new, :edit, :create, :update, :destroy]
 
 
+
 	def index
 		@authors = Author.all
 		# render text: @authors.map { |i| "#{i.russian}: --- #{i.greek} --- #{i.latin} --- #{i.english} --- #{i.french} --- #{i.german} --- #{i.dutch} --- #{i.spanish} --- #{i.italian} --- #{i.hungarian} --- #{i.croatian}  "   }.join("<br/>" )
@@ -17,14 +18,22 @@ class AuthorsController < ApplicationController
 	    # @author = Author.find(params[:id])	
 	end
 
-	def create #C
-		# render text: params.inspect
-		@author = Author.create(author_params)
-		if @author.errors.empty?
-			redirect_to author_path(@author)
-		else
-			render "new"
-		end
+	def create
+
+		@author = Author.new(author_params)
+
+		respond_to do |format|
+	      if @author.save
+	        format.html { redirect_to @author, notice: 'Author was successfully created.' }
+	        # format.json { render :show, status: :created, location: @author }
+	        # format.json { render @author.to_json, status: :created }
+	        format.json  { render :json => @author }
+
+	      else
+	        format.html { render :new }
+	        format.json { render json: @author.errors, status: :unprocessable_entity }
+	      end
+	    end
 	end
 
 	def show #R
